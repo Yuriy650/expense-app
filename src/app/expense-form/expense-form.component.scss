@@ -1,0 +1,115 @@
+
+.form-control {
+  margin: 1rem;
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+
+  }
+
+  input, select {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    background-color: #eee;
+    border-radius: 5px;
+    height: 30px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.expense-container {
+  flex-wrap: wrap;
+  &__btn-list, &__btn-total {
+    border: 1px solid #7f7f7f;
+    background-color: #fff;
+    color: #7f7f7f;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    margin: 1rem;
+  }
+  &__btn-delete {
+    border: 1px solid #7f7f7f;
+    color: red;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    margin: 1rem;
+  }
+  &__list-item {
+    margin-bottom: 1rem;
+    border: 1px solid #7f7f7f;
+    font-size: 0.9rem;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    line-height: 1.3rem;
+
+  }
+  &__total-sum {
+    margin: 1rem;
+    color: #46760A;
+    font-weight: 700;
+  }
+  &__form {
+    flex-wrap: wrap;
+    max-width: 30%;
+  }
+
+  &__body {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  &__list {
+    margin: 1rem;
+
+    li {
+      list-style-type: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0
+    }
+  }
+
+  &__btn-send {
+    display: inline-block;
+    background: #6A983C;
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    font-size: 1rem;
+    border: 2px solid #46760A;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 0.5rem;
+    margin-right: auto;
+  }
+
+  &__btn-send:hover {
+    background-color: #33ff33;
+    color: #fff;
+
+    &:disabled {
+      background: #ccc;
+      color: #000;
+      cursor: not-allowed;
+    }
+  }
+}

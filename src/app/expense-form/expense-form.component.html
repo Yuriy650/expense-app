@@ -1,0 +1,47 @@
+<div class="expense-container">
+  <div class="expense-container__body" fxLayout="row" fxLayoutAlign="flex-start flex-start" fxflex>
+    <div class="expense-container__form" fxLayout="column" fxLayoutAlign="center flex-start" fxFlex>
+      <form (ngSubmit)="submit()" [formGroup]="form">
+        <div class="form-control" fxLayout="column" fxLayoutAlign="space-between start" fxflex>
+          <label>Date</label>
+          <input id="input-date" type="date" placeholder="Date" formControlName="date">
+        </div>
+        <div class="form-control" fxLayout="column" fxLayoutAlign="space-between start" fxflex>
+          <label>Count</label>
+          <input id="input-count" placeholder="Count" type="number" formControlName="count">
+        </div>
+        <div class="form-control" fxLayout="column" fxLayoutAlign="space-between start" fxflex>
+          <label>Currency</label>
+          <select formControlName="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="PLN">PLN</option>
+          </select>
+        </div>
+        <div class="form-control" fxLayout="column" fxLayoutAlign="space-between start" fxflex>
+          <label>Expense</label>
+          <label for="input-expense"></label><input id="input-expense" placeholder="Expense" type="text" formControlName="expense"/>
+        </div>
+        <button class="expense-container__btn-send" type="submit"
+                [disabled]="form.invalid">ADD
+        </button>
+      </form>
+    </div>
+    <div class="expense-container__list-expenses">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxflex>
+        <button class="expense-container__btn-list" type="button" (click)="handleOnClick()">List</button>
+        <button class="expense-container__btn-total" type="button" (click)="getTotal()">Total PLN</button>
+      </div>
+      <div class="expense-container__total-sum" *ngIf="total>0">{{total|totalSum}} PLN</div>
+      <div class="expense-container__list" fxLayout="column" fxLayoutAlign="center flex-start">
+        <div class="expense-container__list-item" *ngFor="let item of formData" fxLayout="row" fxLayoutAlign="flex-end center" fxflex>
+          <ul>
+            <li>{{item.date}}</li>
+            <li>{{item.expense}} {{item.count}} {{item.currency}}</li>
+          </ul>
+          <button class="expense-container__btn-delete" type="button" (click)="deleteOnClick(item.id)">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
